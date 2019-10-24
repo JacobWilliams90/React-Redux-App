@@ -1,5 +1,7 @@
+import { GET_TACO, EAT_TACO, DROPPED_TACO } from '../Actions/taco'
+
 const intialState = {
-    taco: null,
+    taco: [],
     isLoading: false,
     err: null
 }
