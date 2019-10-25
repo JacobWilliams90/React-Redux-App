@@ -1,17 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import logger from "redux-logger";
-import { reducer as tacoReducer } from "../src/Reducers/taco";
 import App from "./App";
 
-const rootReducer = combineReducers({
-  taco: tacoReducer
-});
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+import reducer from "./Reducers/poke";
+
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
